@@ -173,6 +173,16 @@ namespace KutuphaneOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap kullaniciEkle {
+            get {
+                object obj = ResourceManager.GetObject("kullaniciEkle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Remove_Book {
             get {
                 object obj = ResourceManager.GetObject("Remove Book", resourceCulture);

@@ -233,5 +233,8 @@
   <ItemGroup>
     <None Include="Resources\KitapEkle.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kullaniciEkle.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
