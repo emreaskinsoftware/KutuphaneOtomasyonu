@@ -63,6 +63,36 @@ namespace KutuphaneOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _128427 {
+            get {
+                object obj = ResourceManager.GetObject("128427", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap _29739_e1711708837519 {
+            get {
+                object obj = ResourceManager.GetObject("29739-e1711708837519", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8c74bb4e959d7211e27c10b5980cb970 {
+            get {
+                object obj = ResourceManager.GetObject("8c74bb4e959d7211e27c10b5980cb970", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_Book {
             get {
                 object obj = ResourceManager.GetObject("Add Book", resourceCulture);
@@ -103,9 +133,39 @@ namespace KutuphaneOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap books_5430309_640 {
+            get {
+                object obj = ResourceManager.GetObject("books-5430309_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap cikartmalar_kitaplar_kutuphane_oda_jpg {
+            get {
+                object obj = ResourceManager.GetObject("cikartmalar-kitaplar-kutuphane-oda.jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Denied {
             get {
                 object obj = ResourceManager.GetObject("Denied", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_99748964_stock_photo_books_on_the_table_in {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_99748964-stock-photo-books-on-the-table-in", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +223,26 @@ namespace KutuphaneOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap kapak {
+            get {
+                object obj = ResourceManager.GetObject("kapak", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap KitapEkle {
             get {
                 object obj = ResourceManager.GetObject("KitapEkle", resourceCulture);
@@ -183,6 +263,26 @@ namespace KutuphaneOtomasyonu.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap kutuphane0 {
+            get {
+                object obj = ResourceManager.GetObject("kutuphane0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap kutuphaneler_baslangic {
+            get {
+                object obj = ResourceManager.GetObject("kutuphaneler-baslangic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Remove_Book {
             get {
                 object obj = ResourceManager.GetObject("Remove Book", resourceCulture);
@@ -196,6 +296,16 @@ namespace KutuphaneOtomasyonu.Properties {
         internal static System.Drawing.Bitmap Return_Book {
             get {
                 object obj = ResourceManager.GetObject("Return Book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap sayilarla_boyama_seti_sihirli_kutuphan_e895b_ {
+            get {
+                object obj = ResourceManager.GetObject("sayilarla-boyama-seti-sihirli-kutuphan-e895b-", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

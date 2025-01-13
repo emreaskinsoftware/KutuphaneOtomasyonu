@@ -32,50 +32,58 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnListele = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxKategori = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxKategori.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 15);
+            this.labelControl1.Location = new System.Drawing.Point(16, 18);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(59, 13);
+            this.labelControl1.Size = new System.Drawing.Size(70, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Kategori seç";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 38);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridControl1.Location = new System.Drawing.Point(16, 47);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(944, 284);
+            this.gridControl1.Size = new System.Drawing.Size(1259, 350);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(196, 9);
+            this.btnListele.Location = new System.Drawing.Point(261, 11);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(4);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(100, 23);
+            this.btnListele.Size = new System.Drawing.Size(133, 28);
             this.btnListele.TabIndex = 4;
             this.btnListele.Text = "Listele";
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
-            // comboBoxEdit1
+            // comboBoxKategori
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(77, 12);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.comboBoxKategori.Location = new System.Drawing.Point(103, 15);
+            this.comboBoxKategori.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxKategori.Name = "comboBoxKategori";
+            this.comboBoxKategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            this.comboBoxKategori.Properties.Items.AddRange(new object[] {
             "Çocuk",
             "Aksiyon",
             "Polisiye",
@@ -89,23 +97,28 @@
             "Macera",
             "Edebiyat",
             "Şiir"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit1.TabIndex = 8;
+            this.comboBoxKategori.Size = new System.Drawing.Size(133, 22);
+            this.comboBoxKategori.TabIndex = 8;
+            this.comboBoxKategori.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // frmEnCokOdunc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 334);
-            this.Controls.Add(this.comboBoxEdit1);
+            this.BackColor = System.Drawing.Color.Blue;
+            this.ClientSize = new System.Drawing.Size(1291, 411);
+            this.Controls.Add(this.comboBoxKategori);
             this.Controls.Add(this.btnListele);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEnCokOdunc";
             this.Text = "frmEnCokOdunc";
+            this.Load += new System.EventHandler(this.frmEnCokOdunc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxKategori.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +130,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnListele;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxKategori;
     }
 }

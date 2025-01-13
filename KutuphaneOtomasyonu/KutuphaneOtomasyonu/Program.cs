@@ -18,5 +18,9 @@ namespace KutuphaneOtomasyonu
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        // Statik bağlantı dizesi
+        public static string ConnectionString = @"Server=EMRE\SQLEXPRESS01;Database=KutuphaneOtomasyonu;Integrated Security=True;";
+
+
     }
 }

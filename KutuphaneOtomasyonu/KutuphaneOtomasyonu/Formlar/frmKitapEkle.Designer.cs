@@ -28,92 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtTc = new DevExpress.XtraEditors.TextEdit();
+            this.lblBagisTc = new DevExpress.XtraEditors.LabelControl();
+            this.chkBagis = new DevExpress.XtraEditors.CheckEdit();
             this.lblAd = new DevExpress.XtraEditors.LabelControl();
+            this.txtAdet = new DevExpress.XtraEditors.TextEdit();
             this.lblKategori = new DevExpress.XtraEditors.LabelControl();
+            this.cmbKategori = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lblYazar = new DevExpress.XtraEditors.LabelControl();
+            this.txtYazar = new DevExpress.XtraEditors.TextEdit();
             this.lblAdet = new DevExpress.XtraEditors.LabelControl();
+            this.txtKitapAdi = new DevExpress.XtraEditors.TextEdit();
             this.btnKitapEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.groupKitapEkle = new DevExpress.XtraEditors.GroupControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.checkBagis = new DevExpress.XtraEditors.CheckEdit();
-            this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupKitapEkle)).BeginInit();
-            this.groupKitapEkle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBagis.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBagis.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbKategori.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKitapAdi.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtTc
+            // 
+            this.txtTc.Location = new System.Drawing.Point(519, 266);
+            this.txtTc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTc.Name = "txtTc";
+            this.txtTc.Properties.Mask.EditMask = "\\d{0,11}";
+            this.txtTc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtTc.Size = new System.Drawing.Size(133, 22);
+            this.txtTc.TabIndex = 25;
+            this.txtTc.Visible = false;
+            // 
+            // lblBagisTc
+            // 
+            this.lblBagisTc.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBagisTc.Appearance.Options.UseForeColor = true;
+            this.lblBagisTc.Location = new System.Drawing.Point(454, 269);
+            this.lblBagisTc.Name = "lblBagisTc";
+            this.lblBagisTc.Size = new System.Drawing.Size(40, 16);
+            this.lblBagisTc.TabIndex = 24;
+            this.lblBagisTc.Text = "TC No:";
+            this.lblBagisTc.Visible = false;
+            // 
+            // chkBagis
+            // 
+            this.chkBagis.Location = new System.Drawing.Point(519, 233);
+            this.chkBagis.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBagis.Name = "chkBagis";
+            this.chkBagis.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkBagis.Properties.Appearance.Options.UseForeColor = true;
+            this.chkBagis.Properties.Caption = "Bağış";
+            this.chkBagis.Size = new System.Drawing.Size(100, 20);
+            this.chkBagis.TabIndex = 23;
+            this.chkBagis.CheckedChanged += new System.EventHandler(this.chkBagis_CheckedChanged_1);
             // 
             // lblAd
             // 
-            this.lblAd.Location = new System.Drawing.Point(25, 55);
+            this.lblAd.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAd.Appearance.Options.UseForeColor = true;
+            this.lblAd.Location = new System.Drawing.Point(429, 13);
+            this.lblAd.Margin = new System.Windows.Forms.Padding(4);
             this.lblAd.Name = "lblAd";
-            this.lblAd.Size = new System.Drawing.Size(54, 13);
-            this.lblAd.TabIndex = 0;
+            this.lblAd.Size = new System.Drawing.Size(65, 16);
+            this.lblAd.TabIndex = 13;
             this.lblAd.Text = "Kitabın Adı:";
+            // 
+            // txtAdet
+            // 
+            this.txtAdet.Location = new System.Drawing.Point(519, 189);
+            this.txtAdet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAdet.Name = "txtAdet";
+            this.txtAdet.Size = new System.Drawing.Size(133, 22);
+            this.txtAdet.TabIndex = 21;
             // 
             // lblKategori
             // 
-            this.lblKategori.Location = new System.Drawing.Point(35, 151);
+            this.lblKategori.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblKategori.Appearance.Options.UseForeColor = true;
+            this.lblKategori.Location = new System.Drawing.Point(443, 131);
+            this.lblKategori.Margin = new System.Windows.Forms.Padding(4);
             this.lblKategori.Name = "lblKategori";
-            this.lblKategori.Size = new System.Drawing.Size(44, 13);
-            this.lblKategori.TabIndex = 1;
+            this.lblKategori.Size = new System.Drawing.Size(52, 16);
+            this.lblKategori.TabIndex = 14;
             this.lblKategori.Text = "Kategori:";
             // 
-            // lblYazar
+            // cmbKategori
             // 
-            this.lblYazar.Location = new System.Drawing.Point(48, 100);
-            this.lblYazar.Name = "lblYazar";
-            this.lblYazar.Size = new System.Drawing.Size(31, 13);
-            this.lblYazar.TabIndex = 2;
-            this.lblYazar.Text = "Yazar:";
-            // 
-            // lblAdet
-            // 
-            this.lblAdet.Location = new System.Drawing.Point(52, 201);
-            this.lblAdet.Name = "lblAdet";
-            this.lblAdet.Size = new System.Drawing.Size(27, 13);
-            this.lblAdet.TabIndex = 3;
-            this.lblAdet.Text = "Adet:";
-            // 
-            // btnKitapEkle
-            // 
-            this.btnKitapEkle.Location = new System.Drawing.Point(92, 273);
-            this.btnKitapEkle.Name = "btnKitapEkle";
-            this.btnKitapEkle.Size = new System.Drawing.Size(75, 23);
-            this.btnKitapEkle.TabIndex = 4;
-            this.btnKitapEkle.Text = "Kitap Ekle";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(92, 52);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 5;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(92, 97);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 6;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(92, 148);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbKategori.Location = new System.Drawing.Point(519, 127);
+            this.cmbKategori.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            this.cmbKategori.Properties.Items.AddRange(new object[] {
             "Çocuk",
             "Aksiyon",
             "Polisiye",
@@ -127,98 +133,104 @@
             "Macera",
             "Edebiyat",
             "Şiir"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit1.TabIndex = 7;
+            this.cmbKategori.Size = new System.Drawing.Size(133, 22);
+            this.cmbKategori.TabIndex = 20;
             // 
-            // textEdit3
+            // lblYazar
             // 
-            this.textEdit3.Location = new System.Drawing.Point(92, 198);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
-            this.textEdit3.TabIndex = 8;
+            this.lblYazar.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblYazar.Appearance.Options.UseForeColor = true;
+            this.lblYazar.Location = new System.Drawing.Point(460, 68);
+            this.lblYazar.Margin = new System.Windows.Forms.Padding(4);
+            this.lblYazar.Name = "lblYazar";
+            this.lblYazar.Size = new System.Drawing.Size(37, 16);
+            this.lblYazar.TabIndex = 15;
+            this.lblYazar.Text = "Yazar:";
             // 
-            // groupKitapEkle
+            // txtYazar
             // 
-            this.groupKitapEkle.Controls.Add(this.dataLayoutControl1);
-            this.groupKitapEkle.Controls.Add(this.checkBagis);
-            this.groupKitapEkle.Controls.Add(this.pictureEdit1);
-            this.groupKitapEkle.Controls.Add(this.lblAd);
-            this.groupKitapEkle.Controls.Add(this.textEdit3);
-            this.groupKitapEkle.Controls.Add(this.lblKategori);
-            this.groupKitapEkle.Controls.Add(this.comboBoxEdit1);
-            this.groupKitapEkle.Controls.Add(this.lblYazar);
-            this.groupKitapEkle.Controls.Add(this.textEdit2);
-            this.groupKitapEkle.Controls.Add(this.lblAdet);
-            this.groupKitapEkle.Controls.Add(this.textEdit1);
-            this.groupKitapEkle.Controls.Add(this.btnKitapEkle);
-            this.groupKitapEkle.Location = new System.Drawing.Point(12, 12);
-            this.groupKitapEkle.Name = "groupKitapEkle";
-            this.groupKitapEkle.Size = new System.Drawing.Size(944, 310);
-            this.groupKitapEkle.TabIndex = 9;
-            this.groupKitapEkle.Text = "Kitap Ekle";
+            this.txtYazar.Location = new System.Drawing.Point(519, 64);
+            this.txtYazar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYazar.Name = "txtYazar";
+            this.txtYazar.Size = new System.Drawing.Size(133, 22);
+            this.txtYazar.TabIndex = 19;
             // 
-            // pictureEdit1
+            // lblAdet
             // 
-            this.pictureEdit1.EditValue = global::KutuphaneOtomasyonu.Properties.Resources.KitapEkle;
-            this.pictureEdit1.Location = new System.Drawing.Point(251, 23);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(242, 282);
-            this.pictureEdit1.TabIndex = 9;
+            this.lblAdet.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAdet.Appearance.Options.UseForeColor = true;
+            this.lblAdet.Location = new System.Drawing.Point(465, 192);
+            this.lblAdet.Margin = new System.Windows.Forms.Padding(4);
+            this.lblAdet.Name = "lblAdet";
+            this.lblAdet.Size = new System.Drawing.Size(31, 16);
+            this.lblAdet.TabIndex = 16;
+            this.lblAdet.Text = "Adet:";
             // 
-            // checkBagis
+            // txtKitapAdi
             // 
-            this.checkBagis.Location = new System.Drawing.Point(92, 234);
-            this.checkBagis.Name = "checkBagis";
-            this.checkBagis.Properties.Caption = "Bağış";
-            this.checkBagis.Size = new System.Drawing.Size(75, 19);
-            this.checkBagis.TabIndex = 10;
+            this.txtKitapAdi.Location = new System.Drawing.Point(519, 9);
+            this.txtKitapAdi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKitapAdi.Name = "txtKitapAdi";
+            this.txtKitapAdi.Size = new System.Drawing.Size(133, 22);
+            this.txtKitapAdi.TabIndex = 18;
             // 
-            // dataLayoutControl1
+            // btnKitapEkle
             // 
-            this.dataLayoutControl1.Location = new System.Drawing.Point(590, 98);
-            this.dataLayoutControl1.Name = "dataLayoutControl1";
-            this.dataLayoutControl1.Root = null;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(180, 120);
-            this.dataLayoutControl1.TabIndex = 11;
-            this.dataLayoutControl1.Text = "dataLayoutControl1";
+            this.btnKitapEkle.Location = new System.Drawing.Point(519, 331);
+            this.btnKitapEkle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKitapEkle.Name = "btnKitapEkle";
+            this.btnKitapEkle.Size = new System.Drawing.Size(133, 28);
+            this.btnKitapEkle.TabIndex = 17;
+            this.btnKitapEkle.Text = "Kitap Ekle";
+            this.btnKitapEkle.Click += new System.EventHandler(this.btnKitapEkle_Click_1);
             // 
             // frmKitapEkle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 334);
-            this.Controls.Add(this.groupKitapEkle);
+            this.BackColor = System.Drawing.Color.Blue;
+            this.BackgroundImage = global::KutuphaneOtomasyonu.Properties.Resources.kutuphane0;
+            this.ClientSize = new System.Drawing.Size(1291, 411);
+            this.Controls.Add(this.txtTc);
+            this.Controls.Add(this.lblBagisTc);
+            this.Controls.Add(this.chkBagis);
+            this.Controls.Add(this.lblAd);
+            this.Controls.Add(this.txtAdet);
+            this.Controls.Add(this.lblKategori);
+            this.Controls.Add(this.cmbKategori);
+            this.Controls.Add(this.lblYazar);
+            this.Controls.Add(this.txtYazar);
+            this.Controls.Add(this.lblAdet);
+            this.Controls.Add(this.txtKitapAdi);
+            this.Controls.Add(this.btnKitapEkle);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKitapEkle";
             this.Text = "KitapIslemleri";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupKitapEkle)).EndInit();
-            this.groupKitapEkle.ResumeLayout(false);
-            this.groupKitapEkle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBagis.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
+            this.Load += new System.EventHandler(this.frmKitapEkle_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBagis.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbKategori.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKitapAdi.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private DevExpress.XtraEditors.TextEdit txtTc;
+        private DevExpress.XtraEditors.LabelControl lblBagisTc;
+        private DevExpress.XtraEditors.CheckEdit chkBagis;
         private DevExpress.XtraEditors.LabelControl lblAd;
+        private DevExpress.XtraEditors.TextEdit txtAdet;
         private DevExpress.XtraEditors.LabelControl lblKategori;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbKategori;
         private DevExpress.XtraEditors.LabelControl lblYazar;
+        private DevExpress.XtraEditors.TextEdit txtYazar;
         private DevExpress.XtraEditors.LabelControl lblAdet;
+        private DevExpress.XtraEditors.TextEdit txtKitapAdi;
         private DevExpress.XtraEditors.SimpleButton btnKitapEkle;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.GroupControl groupKitapEkle;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
-        private DevExpress.XtraEditors.CheckEdit checkBagis;
     }
 }

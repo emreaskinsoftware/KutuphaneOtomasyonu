@@ -35,174 +35,198 @@
             this.lblEposta = new DevExpress.XtraEditors.LabelControl();
             this.lblTCNo = new DevExpress.XtraEditors.LabelControl();
             this.lblTelNo = new DevExpress.XtraEditors.LabelControl();
-            this.txtKullaniciAdi = new DevExpress.XtraEditors.TextEdit();
+            this.txtAd = new DevExpress.XtraEditors.TextEdit();
             this.txtAdres = new DevExpress.XtraEditors.TextEdit();
-            this.txtTelNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtTelefonNo = new DevExpress.XtraEditors.TextEdit();
             this.txtEposta = new DevExpress.XtraEditors.TextEdit();
-            this.txtTCNo = new DevExpress.XtraEditors.TextEdit();
-            this.txtKullanicininSoyadi = new DevExpress.XtraEditors.TextEdit();
-            this.checkDogru = new DevExpress.XtraEditors.CheckEdit();
+            this.txtTC = new DevExpress.XtraEditors.TextEdit();
+            this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
+            this.chkBilgilerDogru = new DevExpress.XtraEditors.CheckEdit();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKullaniciAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelefonNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEposta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTCNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKullanicininSoyadi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDogru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBilgilerDogru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblKullaniciAdi
             // 
-            this.lblKullaniciAdi.Location = new System.Drawing.Point(37, 12);
+            this.lblKullaniciAdi.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblKullaniciAdi.Appearance.Options.UseForeColor = true;
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(474, 23);
+            this.lblKullaniciAdi.Margin = new System.Windows.Forms.Padding(4);
             this.lblKullaniciAdi.Name = "lblKullaniciAdi";
-            this.lblKullaniciAdi.Size = new System.Drawing.Size(73, 13);
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(90, 16);
             this.lblKullaniciAdi.TabIndex = 0;
             this.lblKullaniciAdi.Text = "Kullanıcının Adı:";
             // 
             // lblKullanicinSoyadi
             // 
-            this.lblKullanicinSoyadi.Location = new System.Drawing.Point(12, 50);
+            this.lblKullanicinSoyadi.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblKullanicinSoyadi.Appearance.Options.UseForeColor = true;
+            this.lblKullanicinSoyadi.Location = new System.Drawing.Point(441, 70);
+            this.lblKullanicinSoyadi.Margin = new System.Windows.Forms.Padding(4);
             this.lblKullanicinSoyadi.Name = "lblKullanicinSoyadi";
-            this.lblKullanicinSoyadi.Size = new System.Drawing.Size(98, 13);
+            this.lblKullanicinSoyadi.Size = new System.Drawing.Size(120, 16);
             this.lblKullanicinSoyadi.TabIndex = 1;
             this.lblKullanicinSoyadi.Text = "Kullanınıcının Soyadı:";
             // 
             // lblAdres
             // 
-            this.lblAdres.Location = new System.Drawing.Point(78, 202);
+            this.lblAdres.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAdres.Appearance.Options.UseForeColor = true;
+            this.lblAdres.Location = new System.Drawing.Point(529, 257);
+            this.lblAdres.Margin = new System.Windows.Forms.Padding(4);
             this.lblAdres.Name = "lblAdres";
-            this.lblAdres.Size = new System.Drawing.Size(32, 13);
+            this.lblAdres.Size = new System.Drawing.Size(38, 16);
             this.lblAdres.TabIndex = 2;
             this.lblAdres.Text = "Adres:";
             // 
             // lblEposta
             // 
-            this.lblEposta.Location = new System.Drawing.Point(70, 126);
+            this.lblEposta.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEposta.Appearance.Options.UseForeColor = true;
+            this.lblEposta.Location = new System.Drawing.Point(518, 163);
+            this.lblEposta.Margin = new System.Windows.Forms.Padding(4);
             this.lblEposta.Name = "lblEposta";
-            this.lblEposta.Size = new System.Drawing.Size(40, 13);
+            this.lblEposta.Size = new System.Drawing.Size(47, 16);
             this.lblEposta.TabIndex = 3;
             this.lblEposta.Text = "E posta:";
             // 
             // lblTCNo
             // 
-            this.lblTCNo.Location = new System.Drawing.Point(70, 88);
+            this.lblTCNo.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTCNo.Appearance.Options.UseForeColor = true;
+            this.lblTCNo.Location = new System.Drawing.Point(518, 116);
+            this.lblTCNo.Margin = new System.Windows.Forms.Padding(4);
             this.lblTCNo.Name = "lblTCNo";
-            this.lblTCNo.Size = new System.Drawing.Size(33, 13);
+            this.lblTCNo.Size = new System.Drawing.Size(40, 16);
             this.lblTCNo.TabIndex = 4;
             this.lblTCNo.Text = "TC No:";
             // 
             // lblTelNo
             // 
-            this.lblTelNo.Location = new System.Drawing.Point(54, 164);
+            this.lblTelNo.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTelNo.Appearance.Options.UseForeColor = true;
+            this.lblTelNo.Location = new System.Drawing.Point(497, 210);
+            this.lblTelNo.Margin = new System.Windows.Forms.Padding(4);
             this.lblTelNo.Name = "lblTelNo";
-            this.lblTelNo.Size = new System.Drawing.Size(56, 13);
+            this.lblTelNo.Size = new System.Drawing.Size(67, 16);
             this.lblTelNo.TabIndex = 5;
             this.lblTelNo.Text = "Telefon No:";
             // 
-            // txtKullaniciAdi
+            // txtAd
             // 
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(116, 9);
-            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
-            this.txtKullaniciAdi.TabIndex = 6;
+            this.txtAd.Location = new System.Drawing.Point(580, 19);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(133, 22);
+            this.txtAd.TabIndex = 6;
+            this.txtAd.EditValueChanged += new System.EventHandler(this.txtKullaniciAdi_EditValueChanged);
             // 
             // txtAdres
             // 
-            this.txtAdres.Location = new System.Drawing.Point(116, 199);
+            this.txtAdres.Location = new System.Drawing.Point(580, 253);
+            this.txtAdres.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(100, 20);
+            this.txtAdres.Size = new System.Drawing.Size(133, 22);
             this.txtAdres.TabIndex = 7;
             // 
-            // txtTelNo
+            // txtTelefonNo
             // 
-            this.txtTelNo.Location = new System.Drawing.Point(116, 161);
-            this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(100, 20);
-            this.txtTelNo.TabIndex = 8;
+            this.txtTelefonNo.Location = new System.Drawing.Point(580, 206);
+            this.txtTelefonNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefonNo.Name = "txtTelefonNo";
+            this.txtTelefonNo.Properties.Mask.EditMask = "05\\d?\\d? \\d\\d\\d \\d\\d\\d\\d";
+            this.txtTelefonNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.txtTelefonNo.Size = new System.Drawing.Size(133, 22);
+            this.txtTelefonNo.TabIndex = 8;
             // 
             // txtEposta
             // 
-            this.txtEposta.Location = new System.Drawing.Point(116, 123);
+            this.txtEposta.Location = new System.Drawing.Point(580, 159);
+            this.txtEposta.Margin = new System.Windows.Forms.Padding(4);
             this.txtEposta.Name = "txtEposta";
-            this.txtEposta.Size = new System.Drawing.Size(100, 20);
+            this.txtEposta.Size = new System.Drawing.Size(133, 22);
             this.txtEposta.TabIndex = 9;
             // 
-            // txtTCNo
+            // txtTC
             // 
-            this.txtTCNo.Location = new System.Drawing.Point(116, 85);
-            this.txtTCNo.Name = "txtTCNo";
-            this.txtTCNo.Size = new System.Drawing.Size(100, 20);
-            this.txtTCNo.TabIndex = 10;
+            this.txtTC.Location = new System.Drawing.Point(580, 113);
+            this.txtTC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTC.Name = "txtTC";
+            this.txtTC.Properties.Mask.EditMask = "\\d{0,11}";
+            this.txtTC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtTC.Size = new System.Drawing.Size(133, 22);
+            this.txtTC.TabIndex = 10;
             // 
-            // txtKullanicininSoyadi
+            // txtSoyad
             // 
-            this.txtKullanicininSoyadi.Location = new System.Drawing.Point(116, 47);
-            this.txtKullanicininSoyadi.Name = "txtKullanicininSoyadi";
-            this.txtKullanicininSoyadi.Size = new System.Drawing.Size(100, 20);
-            this.txtKullanicininSoyadi.TabIndex = 11;
+            this.txtSoyad.Location = new System.Drawing.Point(580, 66);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(133, 22);
+            this.txtSoyad.TabIndex = 11;
             // 
-            // checkDogru
+            // chkBilgilerDogru
             // 
-            this.checkDogru.Location = new System.Drawing.Point(116, 238);
-            this.checkDogru.Name = "checkDogru";
-            this.checkDogru.Properties.Caption = "Bilgiler Doğru";
-            this.checkDogru.Size = new System.Drawing.Size(100, 19);
-            this.checkDogru.TabIndex = 12;
+            this.chkBilgilerDogru.Location = new System.Drawing.Point(580, 301);
+            this.chkBilgilerDogru.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBilgilerDogru.Name = "chkBilgilerDogru";
+            this.chkBilgilerDogru.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkBilgilerDogru.Properties.Appearance.Options.UseForeColor = true;
+            this.chkBilgilerDogru.Properties.Caption = "Bilgiler Doğru";
+            this.chkBilgilerDogru.Size = new System.Drawing.Size(133, 20);
+            this.chkBilgilerDogru.TabIndex = 12;
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(116, 282);
+            this.btnEkle.Location = new System.Drawing.Point(580, 355);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(100, 23);
+            this.btnEkle.Size = new System.Drawing.Size(133, 28);
             this.btnEkle.TabIndex = 13;
             this.btnEkle.Text = "Ekle";
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::KutuphaneOtomasyonu.Properties.Resources.kullaniciEkle;
-            this.pictureEdit1.Location = new System.Drawing.Point(247, 9);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(709, 296);
-            this.pictureEdit1.TabIndex = 14;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // frmKullaniciEkle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 334);
-            this.Controls.Add(this.pictureEdit1);
+            this.BackgroundImage = global::KutuphaneOtomasyonu.Properties.Resources.kullaniciEkle;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1291, 411);
             this.Controls.Add(this.btnEkle);
-            this.Controls.Add(this.checkDogru);
-            this.Controls.Add(this.txtKullanicininSoyadi);
-            this.Controls.Add(this.txtTCNo);
+            this.Controls.Add(this.chkBilgilerDogru);
+            this.Controls.Add(this.txtSoyad);
+            this.Controls.Add(this.txtTC);
             this.Controls.Add(this.txtEposta);
-            this.Controls.Add(this.txtTelNo);
+            this.Controls.Add(this.txtTelefonNo);
             this.Controls.Add(this.txtAdres);
-            this.Controls.Add(this.txtKullaniciAdi);
+            this.Controls.Add(this.txtAd);
             this.Controls.Add(this.lblTelNo);
             this.Controls.Add(this.lblTCNo);
             this.Controls.Add(this.lblEposta);
             this.Controls.Add(this.lblAdres);
             this.Controls.Add(this.lblKullanicinSoyadi);
             this.Controls.Add(this.lblKullaniciAdi);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKullaniciEkle";
             this.Text = "frmKullaniciEkle";
-            ((System.ComponentModel.ISupportInitialize)(this.txtKullaniciAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelefonNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEposta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTCNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKullanicininSoyadi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDogru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBilgilerDogru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,15 +240,14 @@
         private DevExpress.XtraEditors.LabelControl lblEposta;
         private DevExpress.XtraEditors.LabelControl lblTCNo;
         private DevExpress.XtraEditors.LabelControl lblTelNo;
-        private DevExpress.XtraEditors.TextEdit txtKullaniciAdi;
+        private DevExpress.XtraEditors.TextEdit txtAd;
         private DevExpress.XtraEditors.TextEdit txtAdres;
-        private DevExpress.XtraEditors.TextEdit txtTelNo;
+        private DevExpress.XtraEditors.TextEdit txtTelefonNo;
         private DevExpress.XtraEditors.TextEdit txtEposta;
-        private DevExpress.XtraEditors.TextEdit txtTCNo;
-        private DevExpress.XtraEditors.TextEdit txtKullanicininSoyadi;
-        private DevExpress.XtraEditors.CheckEdit checkDogru;
+        private DevExpress.XtraEditors.TextEdit txtTC;
+        private DevExpress.XtraEditors.TextEdit txtSoyad;
+        private DevExpress.XtraEditors.CheckEdit chkBilgilerDogru;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

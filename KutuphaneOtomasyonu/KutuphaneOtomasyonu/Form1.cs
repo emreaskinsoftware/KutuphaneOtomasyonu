@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace KutuphaneOtomasyonu
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -95,9 +97,6 @@ namespace KutuphaneOtomasyonu
 
         private void btnKullaniciAra_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.frmKullaniciAra frm = new Formlar.frmKullaniciAra();
-            frm.MdiParent = this;
-            frm.Show();
         }
 
         private void btnOduncAlınanlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -119,6 +118,20 @@ namespace KutuphaneOtomasyonu
             Formlar.frmGecikmeRaporu frm = new Formlar.frmGecikmeRaporu();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAnaSayfa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // MDI Parent içinde açık olan tüm pencereleri kontrol et
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); // Her bir pencereyi kapat
+            }
         }
     }
 }
