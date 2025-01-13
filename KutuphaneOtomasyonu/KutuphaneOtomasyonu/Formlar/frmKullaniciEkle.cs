@@ -98,5 +98,10 @@ namespace KutuphaneOtomasyonu.Formlar
         {
 
         }
+
+        private void frmKullaniciEkle_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

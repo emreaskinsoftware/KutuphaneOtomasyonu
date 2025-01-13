@@ -24,7 +24,7 @@ namespace KutuphaneOtomasyonu.Formlar
             gridView1.OptionsBehavior.Editable = false; // Tüm düzenlemeleri devre dışı bırakır
             gridView1.OptionsSelection.MultiSelect = false; // Çoklu seçim engellenir
             gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None; // Yeni satır eklemeyi devre dışı bırakır
-
+            gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
         }
         private void LoadBooks()
         {

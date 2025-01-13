@@ -94,13 +94,16 @@ namespace KutuphaneOtomasyonu.Formlar
 
         private void btnIade_Click(object sender, EventArgs e)
         {
-            if (listBoxControl1.Items.Count == 0)
+            var selectedRow = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (selectedRow == null)
             {
-                MessageBox.Show("Lütfen iade edilecek kitapları listeye ekleyin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lütfen iade edilecek bir kitap seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string tcNo = txtTC.Text.Trim();
+            string kitapAdi = selectedRow["Kitap Adı"].ToString();
+            string tcNo = selectedRow["TC No"].ToString();
+            decimal gecikmeUcreti = 0;
 
             using (SqlConnection connection = new SqlConnection(Program.ConnectionString))
             {
@@ -108,106 +111,97 @@ namespace KutuphaneOtomasyonu.Formlar
                 {
                     connection.Open();
 
-                    foreach (var item in listBoxControl1.Items)
-                    {
-                        // Kitap adını listedeki öğeden al
-                        string kitapAdi = item.ToString();
-
-                        // Gecikme ücretini kontrol et
-                        string gecikmeQuery = @"
+                    // Gecikme ücretini kontrol et
+                    string gecikmeQuery = @"
                 SELECT GecikmeUcreti 
                 FROM OduncAlinanlar o
                 INNER JOIN Kitap k ON o.KitapId = k.ID
                 INNER JOIN Kullanici u ON o.KullaniciId = u.ID
                 WHERE k.Ad = @KitapAdi AND u.TcNo = @TcNo";
 
-                        SqlCommand gecikmeCommand = new SqlCommand(gecikmeQuery, connection);
-                        gecikmeCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
-                        gecikmeCommand.Parameters.AddWithValue("@TcNo", tcNo);
+                    SqlCommand gecikmeCommand = new SqlCommand(gecikmeQuery, connection);
+                    gecikmeCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
+                    gecikmeCommand.Parameters.AddWithValue("@TcNo", tcNo);
 
-                        decimal gecikmeUcreti = 0;
-                        object result = gecikmeCommand.ExecuteScalar();
-                        if (result != DBNull.Value && result != null)
-                        {
-                            gecikmeUcreti = Convert.ToDecimal(result);
-                        }
+                    object result = gecikmeCommand.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
+                    {
+                        gecikmeUcreti = Convert.ToDecimal(result);
+                    }
 
-                        // Gecikme ücreti varsa kullanıcıdan ödeme durumu alın
-                        if (gecikmeUcreti > 0)
+                    // Gecikme ücreti varsa kullanıcıdan ödeme durumu alın
+                    if (gecikmeUcreti > 0)
+                    {
+                        DialogResult gecikmeOnay = MessageBox.Show(
+                            $"Gecikme ücreti: {gecikmeUcreti:C}. Ödeme alındı mı?",
+                            "Gecikme Ücreti",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+
+                        if (gecikmeOnay == DialogResult.Yes)
                         {
-                            DialogResult gecikmeOnay = MessageBox.Show(
-                                $"Gecikme ücreti: {gecikmeUcreti:C}. Ödeme alındı mı?",
-                                "Gecikme Ücreti",
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question
+                            string inputBorc = Microsoft.VisualBasic.Interaction.InputBox(
+                                $"Ödenen miktarı giriniz. Toplam gecikme ücreti: {gecikmeUcreti:C}",
+                                "Borç Ödemesi",
+                                "0"
                             );
 
-                            if (gecikmeOnay == DialogResult.Yes)
+                            if (decimal.TryParse(inputBorc, out decimal odenenMiktar) && odenenMiktar >= 0)
                             {
-                                // Kullanıcıdan ödeme miktarını al
-                                string inputBorc = Microsoft.VisualBasic.Interaction.InputBox(
-                                    $"Ödenen miktarı giriniz. Toplam gecikme ücreti: {gecikmeUcreti:C}",
-                                    "Borç Ödemesi",
-                                    "0"
-                                );
-
-                                if (decimal.TryParse(inputBorc, out decimal odenenMiktar) && odenenMiktar >= 0)
+                                if (odenenMiktar >= gecikmeUcreti)
                                 {
-                                    if (odenenMiktar >= gecikmeUcreti)
-                                    {
-                                        // Tam ödeme yapıldıysa borcu sıfırla
-                                        string updateUserQuery = @"
+                                    string updateUserQuery = @"
                                 UPDATE Kullanici
                                 SET Borc = 0, Kredi = 100
                                 WHERE TcNo = @TcNo";
 
-                                        SqlCommand updateUserCommand = new SqlCommand(updateUserQuery, connection);
-                                        updateUserCommand.Parameters.AddWithValue("@TcNo", tcNo);
-                                        updateUserCommand.ExecuteNonQuery();
+                                    SqlCommand updateUserCommand = new SqlCommand(updateUserQuery, connection);
+                                    updateUserCommand.Parameters.AddWithValue("@TcNo", tcNo);
+                                    updateUserCommand.ExecuteNonQuery();
 
-                                        MessageBox.Show("Tüm borç ödendi. Kullanıcının borcu sıfırlandı ve kredi 100 olarak güncellendi.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    }
-                                    else
-                                    {
-                                        // Kısmi ödeme yapıldıysa borcu güncelle
-                                        decimal kalanBorc = gecikmeUcreti - odenenMiktar;
-                                        string updatePartialUserQuery = @"
+                                    MessageBox.Show("Tüm borç ödendi. Kullanıcının borcu sıfırlandı ve kredi 100 olarak güncellendi.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    decimal kalanBorc = gecikmeUcreti - odenenMiktar;
+                                    string updatePartialUserQuery = @"
                                 UPDATE Kullanici
                                 SET Borc = @KalanBorc
                                 WHERE TcNo = @TcNo";
 
-                                        SqlCommand updatePartialCommand = new SqlCommand(updatePartialUserQuery, connection);
-                                        updatePartialCommand.Parameters.AddWithValue("@KalanBorc", kalanBorc);
-                                        updatePartialCommand.Parameters.AddWithValue("@TcNo", tcNo);
-                                        updatePartialCommand.ExecuteNonQuery();
+                                    SqlCommand updatePartialCommand = new SqlCommand(updatePartialUserQuery, connection);
+                                    updatePartialCommand.Parameters.AddWithValue("@KalanBorc", kalanBorc);
+                                    updatePartialCommand.Parameters.AddWithValue("@TcNo", tcNo);
+                                    updatePartialCommand.ExecuteNonQuery();
 
-                                        MessageBox.Show($"Kısmi ödeme yapıldı. Kalan borç: {kalanBorc:C}.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Geçersiz bir ödeme miktarı girildi. Borç değiştirilmeyecek.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show($"Kısmi ödeme yapıldı. Kalan borç: {kalanBorc:C}.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Gecikme ücreti alınmadı. Borç değiştirilmeyecek.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Geçersiz bir ödeme miktarı girildi. Borç değiştirilmeyecek.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("Gecikme ücreti alınmadı. Borç değiştirilmeyecek.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
 
-                        // Kitabı iade et
-                        string deleteQuery = @"
+                    // Kitabı iade et
+                    string deleteQuery = @"
                 DELETE FROM OduncAlinanlar
                 WHERE KitapId = (SELECT ID FROM Kitap WHERE Ad = @KitapAdi)
                 AND KullaniciId = (SELECT ID FROM Kullanici WHERE TcNo = @TcNo)";
 
-                        SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection);
-                        deleteCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
-                        deleteCommand.Parameters.AddWithValue("@TcNo", tcNo);
-                        deleteCommand.ExecuteNonQuery();
+                    SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection);
+                    deleteCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
+                    deleteCommand.Parameters.AddWithValue("@TcNo", tcNo);
+                    deleteCommand.ExecuteNonQuery();
 
-                        // Kitap tablosunu güncelle
-                        string updateQuery = @"
+                    // Kitap tablosunu güncelle
+                    string updateQuery = @"
                 UPDATE Kitap
                 SET 
                     OduncSayisi = OduncSayisi - 1,
@@ -215,28 +209,37 @@ namespace KutuphaneOtomasyonu.Formlar
                     Durum = CASE WHEN (Adet - OduncSayisi) > 0 THEN 1 ELSE 0 END
                 WHERE Ad = @KitapAdi";
 
-                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
-                        updateCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
-                        updateCommand.ExecuteNonQuery();
-                    }
+                    SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                    updateCommand.Parameters.AddWithValue("@KitapAdi", kitapAdi);
+                    updateCommand.ExecuteNonQuery();
 
                     // Kullanıcı tablosunu güncelle
                     string updateKullaniciQuery = @"
-            UPDATE Kullanici
-            SET 
-                OkuduguKitapSayisi = OkuduguKitapSayisi + @IadeEdilenKitapSayisi,
-                OduncAldigiKitapSayisi = OduncAldigiKitapSayisi - @IadeEdilenKitapSayisi
-            WHERE TcNo = @TcNo";
+                UPDATE Kullanici
+                SET 
+                    OkuduguKitapSayisi = OkuduguKitapSayisi + 1,
+                    OduncAldigiKitapSayisi = OduncAldigiKitapSayisi - 1
+                WHERE TcNo = @TcNo";
 
                     SqlCommand updateKullaniciCommand = new SqlCommand(updateKullaniciQuery, connection);
-                    updateKullaniciCommand.Parameters.AddWithValue("@IadeEdilenKitapSayisi", listBoxControl1.Items.Count);
                     updateKullaniciCommand.Parameters.AddWithValue("@TcNo", tcNo);
                     updateKullaniciCommand.ExecuteNonQuery();
 
-                    MessageBox.Show("Tüm kitaplar başarıyla iade edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"'{kitapAdi}' başarıyla iade edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    LoadIadeEdilecekKitaplar(); // Grid'i güncelle
-                    listBoxControl1.Items.Clear(); // Listeyi temizle
+                    // Listbox'tan kitabı sil
+                    if (listBoxControl1.Items.Count > 0)
+                    {
+                        listBoxControl1.Items.RemoveAt(listBoxControl1.Items.Count - 1);
+                    }
+
+                    // Grid ve diğer alanları temizle
+                    LoadIadeEdilecekKitaplar();
+                    txtKullaniciAdi.Text = "";
+                    txtKullaniciSoyadi.Text = "";
+                    txtKitapAdi.Text = "";
+                    txtKitapYazari.Text = "";
+                    txtTC.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -244,6 +247,9 @@ namespace KutuphaneOtomasyonu.Formlar
                 }
             }
         }
+
+
+
 
 
 

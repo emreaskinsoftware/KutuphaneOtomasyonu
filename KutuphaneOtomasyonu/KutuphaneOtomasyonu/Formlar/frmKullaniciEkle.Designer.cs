@@ -219,6 +219,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKullaniciEkle";
             this.Text = "frmKullaniciEkle";
+            this.Load += new System.EventHandler(this.frmKullaniciEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefonNo.Properties)).EndInit();
